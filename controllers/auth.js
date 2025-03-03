@@ -1,11 +1,19 @@
+
+// Also try using ES6 isntead of CJS -> Use import instead of require
+
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User  = require('../models/user');
 
-const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
+// For functions that you might need repeatedly, make a Utils folder
+// Import them from Utils folder whenever needed
+const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString(); 
 
+
+
+// Try making a better flow for registering
 exports.register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password } = req.body; 
 
   try {
     if (!username || !email || !password) {
@@ -24,7 +32,7 @@ exports.register = async (req, res) => {
 
 
 
-
+// No need for password , if we are doing OTP authentication
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -55,3 +63,10 @@ exports.verifyOTP = async (req, res) => {
     res.status(500).json({ error: 'OTP verification failed' });
   }
 };
+
+
+// Use middleware for token authentication 
+
+// Token needs to be authenticated right ? Until they expire.
+
+// See how id fields work in general and then specifically also in Sequelize

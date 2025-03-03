@@ -6,6 +6,9 @@ const sequelize = new Sequelize('auth_db', 'root', 'root', {
 });
 
 // Test the connection
+
+//Put database.js in Utils as well
+
 (async () => {
   try {
     await sequelize.authenticate();
