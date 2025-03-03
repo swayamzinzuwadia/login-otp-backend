@@ -14,3 +14,6 @@ app.use('/api/auth', authRoutes);
     console.error('Database sync failed', error);
   }
 })();
+
+//Send me a screenshot of the Postman and the SQL DB -the entry and the raw query (Postman) you are using in it.
+
