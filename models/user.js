@@ -1,12 +1,16 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("./database");
+import {DataTypes} from 'sequelize';
+import  sequelize  from "../utils/database.js";
 
 const User = sequelize.define("User", {
-    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
-    username: { type: DataTypes.STRING, allowNull: false },
-    email: { type: DataTypes.STRING, allowNull: false, unique: true },
-    password: { type: DataTypes.STRING, allowNull: false },
-    otp: { type: DataTypes.STRING, allowNull: true },
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  username: { type: DataTypes.STRING, allowNull: false, unique: true },
+  email: { type: DataTypes.STRING, allowNull: false, unique: true },
+  otp: { type: DataTypes.STRING, allowNull: true },
+  token: { type: DataTypes.TEXT, allowNull: true }, 
 });
 
+<<<<<<< Updated upstream
 module.exports = User;
+=======
+export default User;
+>>>>>>> Stashed changes

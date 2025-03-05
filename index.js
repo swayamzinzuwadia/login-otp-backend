@@ -1,6 +1,10 @@
-const express = require('express');
-const sequelize  = require('./models/database');
-const authRoutes = require('./routes/routes');
+import express from 'express';
+import sequelize from './utils/database.js';
+import authRoutes from './routes/routes.js';
+
+// const express = require('express');
+// const sequelize  = require('./utils/database');
+// const authRoutes = require('./routes/routes');
 
 const app = express();
 app.use(express.json());
